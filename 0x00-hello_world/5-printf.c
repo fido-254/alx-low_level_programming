@@ -1,11 +1,11 @@
 #include <stdio.h>
 
 /**
- * main - starting Point of The Code
+ * main - starting point of the code
+ * 
+ * Description: A Programme That outputs via Printf
  *
- * Description : Code that Prints out using Printf
- *
- * return0 : return(0)
+ * Return: return(0)
  */
 
 int main(void)

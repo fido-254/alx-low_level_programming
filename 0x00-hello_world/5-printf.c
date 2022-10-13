@@ -1,12 +1,12 @@
-#include <stdio.h>
+#include<stdio.h>
 
 /**
- * main - starting point of the code
- * 
- * Description: A Programme That outputs via Printf
+ * main - Entry point
  *
- * Return: return(0)
- */
+ * Description: A C program that prints with printf function.
+ *
+ * Return: Always 0 (Success)
+*/
 
 int main(void)
 {

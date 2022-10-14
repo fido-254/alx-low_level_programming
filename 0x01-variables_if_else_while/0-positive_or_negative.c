@@ -2,11 +2,12 @@
 #include <time.h>
 #include <stdio.h>
 
-/** main - Start of code
+/**
+ * main - Start of code
  *
  * Description : Determines and prints if value is positive, negative or zero
  *
- * return : Return 0 (Success)
+ * Return : Return 0 (Success)
  */
 
 int main(void)
@@ -25,5 +26,4 @@ int main(void)
 		printf("%i is negative\n", n);
 
 	return (0);
-}
-	
+}	

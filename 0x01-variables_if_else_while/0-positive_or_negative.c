@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * main - Start of code
+ * main - start of code
  *
  * Description : Determines and prints if value is positive, negative or zero
  *
@@ -26,4 +26,4 @@ int main(void)
 		printf("%i is negative\n", n);
 
 	return (0);
-}	
+}

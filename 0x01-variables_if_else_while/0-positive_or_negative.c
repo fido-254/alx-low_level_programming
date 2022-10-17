@@ -8,7 +8,7 @@
  * Description : Determines and prints if value is positive, negative or zero
  *
  * Return : Return 0 (Success)
- */
+*/
 
 int main(void)
 {

@@ -3,9 +3,7 @@
 #include <stdio.h>
 
 /**
- * main - start of code
- *
- * Description : Determines and prints if value is positive, negative or zero
+ * main - start of code which Assigns value positive, negative or zero to n
  *
  * Return : Return 0 (Success)
 */

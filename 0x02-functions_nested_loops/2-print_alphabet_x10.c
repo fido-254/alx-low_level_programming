@@ -1,18 +1,21 @@
-#include"main.h"
-
+#include "main.h"
 /**
- * print_alphabet_x10 - function that prints the alphabet 10 times
+ * print_alphabet_x10 - use _putchar
  *
-*/
-
-void print_alphabet_x10(void)
+ * Return: return 0 (Success)
+ */
+int print_alphabet_x10(void)
 {
-	int line, ch;
+	int letter, cont;
 
-	for (line = 0; line <= 9; ++line)
+	/* Code ASCII "alphabet" */
+	for (cont = 0; cont < 10; cont++)
 	{
-		for (ch = 'a'; ch <= 'z'; ++ch)
-			_putchar(ch);
+		for (letter = 97; letter <= 122; letter++)
+		{
+			_putchar(letter);
+		}
 		_putchar('\n');
 	}
+	return (0);
 }

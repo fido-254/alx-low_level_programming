@@ -20,3 +20,4 @@ char *_strdup(char *str)
 	for (x = 0; *(str + x); x++)
 		*(word + x) = *(str + x);
 	return (word);
+}

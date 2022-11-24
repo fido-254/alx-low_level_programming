@@ -1,66 +1,54 @@
-#include "lists.h"
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
+#include "lists.h"
 
 /**
- * _strlen - get the string's lentgh
- * @str: string to get lentgh of
- * Return: string's lentgh
- */
-unsigned int _strlen(char *str)
-{
-	int counter = 0;
-
-	while (*str)
-	{
-		str++;
-		counter++;
-	}
-	return (counter);
-}
-
-
-/**
- * add_node_end - add node at the end of a list.
- * @head: double pointer
- * @str: string to add new node
- * Return: nodes to the end.
+ * add_node_end - function that adds a new node at the end of list.
+ * @head: pointer to singly linked list.
+ * @str: pointer to signly linked list.
+ *
+ * str needs to be duplicated.
+ * You are allowed to use strdup.
+ *
+ * Return: The address of the new element or NULL if it failed.
+ *
  */
 
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *newnode, *x;
+	list_t *new_node, *last;
+	size_t length = 0;
 
-	if (str == NULL)
+	new_node = malloc(sizeof(list_t));
+	/* if it fails returb NULL */
+	if (new_node == NULL)
 		return (NULL);
-
-	newnode = malloc(sizeof(list_t));
-	if (newnode == NULL)
-	{
-
-		return (NULL);
-	}
-
-	newnode->str = strdup(str);
-	if (newnode->str == NULL)
-	{
-		free(newnode);
-		return (NULL);
-	}
-
-	newnode->len = _strlen(newnode->str);
-	newnode->next = NULL;
+	/* loop through the string to find length */
+	while (str[length])
+		length++;
+	/* access the length of new_node and assign it to length */
+	new_node->len = length;
+	/* access the list of new_node and duplicate it */
+	new_node->str = strdup(str);
+	/* if there is no head/linked list make new_node as head */
 	if (*head == NULL)
 	{
-		*head = newnode;
-		return (newnode);
+		new_node->next = *head; /*this step isn't needed really */
+		*head = new_node;
 	}
-	x = *head;
-	while (x->next)
-
-		x = x->next;
-		x->next = newnode;
-		return (newnode);
-
-
+	else
+	{	/**
+		 * the new node is going to be the last node so make next,
+		 * of it as NULL
+		 */
+		new_node->next = NULL;
+		last = *head;
+		/* traverse till last node */
+		while (last->next)
+			last = last->next;
+		/* change the next of last node */
+		last->next = new_node;
+	}
+	return (new_node);
 }
